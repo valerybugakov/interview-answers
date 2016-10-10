@@ -17,3 +17,11 @@ If you are a small site then serving assets from a subdomain will likely not be 
 the browser can probably fetch several under-parallelised assets from one domain quicker 
 than it can perform DNS lookups across multiple domains and parallelise those.
 You can still use `dns-prefetch` though.
+
+## What is Hyper Text Transfer Protocol
+
+Hypertext Transfer Protocol (HTTP) is a networking protocol for distributed, collaborative, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web.
+
+## What is HTTP session?
+
+HTTP session is a sequence of network request-response transactions. An HTTP client initiates a request. It establishes a Transmission Control Protocol (TCP) connection to a particular port on a host (typically port 80; see List of TCP and UDP port numbers). An HTTP server listening on that port waits for a client's request message. Upon receiving the request, the server sends back a status line, such as "HTTP/1.1 200 OK", and a message of its own, the body of which is perhaps the requested resource, an error message, or some other information.
