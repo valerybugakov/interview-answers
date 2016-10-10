@@ -16,3 +16,4 @@ so you have to be sure that it’s actually going to be worth it.
 If you are a small site then serving assets from a subdomain will likely not be worth it;
 the browser can probably fetch several under-parallelised assets from one domain quicker 
 than it can perform DNS lookups across multiple domains and parallelise those.
+You can still use `dns-prefetch` though.
