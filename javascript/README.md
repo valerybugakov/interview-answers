@@ -298,9 +298,11 @@ Because it can break other things. Extending built-in types, such as Object or A
 
 Consider this code:
 ```js
-var x = [1,2,3];
-for(var i in x) {
-  console.log(i);
+Array.prototype.lalka = () => console.log('lalka')
+
+const x = [1, 2, 3]
+for (const i in x) {
+  console.log(i)
 }
 ```
 
@@ -317,8 +319,7 @@ the code will instead print:
 // 1
 // 2
 // 3
-// remove
-// indexOf
+// lalka
 `
 
-With remove and indexOf being methods added to the array prototype by ExtJS.
+With lalka method added to the array prototype by us which can break some other library.
