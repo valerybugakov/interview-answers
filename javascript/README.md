@@ -291,3 +291,34 @@ $.ajax({
 Safety First! There’s a reason browsers don’t like you talking to other servers - you never know what those servers will send back! Use good data validation, even if the data is “safe.”
 
 You can only use JSONP for get requests. You can use normal AJAX to do post and delete and all data manipulations, but you cannot do this with JSONP. The practical reason for this is that HTML tags only ever get information, they can’t do anything else (think image tags, links for style sheets, and script tags). The handy reason is that if you owned the API you almost certainly would not want randoms from the internet updating your data.
+
+## Why is extending built-in JavaScript objects not a good idea?
+
+Because it can break other things. Extending built-in types, such as Object or Array is a bad idea in Javascript because other libraries, and even client, can easily be affected. This is especially true for the Object prototype as everything in Javascript extends from it.
+
+Consider this code:
+```js
+var x = [1,2,3];
+for(var i in x) {
+  console.log(i);
+}
+```
+
+It will print
+`
+// 1
+// 2
+// 3
+`
+
+However if you change the array prototype, like the prolific ExtJS library does,
+the code will instead print:
+`
+// 1
+// 2
+// 3
+// remove
+// indexOf
+`
+
+With remove and indexOf being methods added to the array prototype by ExtJS.
