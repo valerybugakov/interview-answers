@@ -34,8 +34,8 @@ The difference is that `apply` lets you invoke the function with arguments as an
 `call` requires the parameters to be listed explicitly. A useful mnemonic is "A for array and C for comma."
 
 ## When would you use `document.write()`?
-Generally `document.write` is considered a bad practice. 
-But it is the simpliest way to include third party content into the document. 
+Generally `document.write` is considered a bad practice.
+But it is the simpliest way to include third party content into the document.
 Also the shortest, and it does not cause any conflicts.
 You may also use `document.write` to:
 * include styles that should only work if JavaScript is enabled.
@@ -45,19 +45,19 @@ You may also use `document.write` to:
 All declarations, both variables and functions, are processed first, before any part of your code is executed.
 
 When you see `var a = 2`, you probably think of that as one statement.
-But JavaScript actually thinks of it as two statements: 
+But JavaScript actually thinks of it as two statements:
 `var a` and `a = 2`.
 
 The first statement, the declaration, is processed during the compilation phase.
 The second statement, the assignment, is left in place for the execution phase.
 Declarations themselves are hoisted, but assignments, even assignments of function expressions, are not hoisted.
-What this leads to is that all declarations in a scope, regardless of where they appear, 
+What this leads to is that all declarations in a scope, regardless of where they appear,
 are processed first before the code itself is executed.
 
-Functions are hoisted first, and then variables. 
+Functions are hoisted first, and then variables.
 Function declarations are hoisted, but function expressions are not.
 
-While multiple/duplicate `var` declarations are effectively ignored, 
+While multiple/duplicate `var` declarations are effectively ignored,
 subsequent function declarations do override previous ones.
 
 ```js
@@ -213,4 +213,28 @@ Another feature of this technique is to allow for an easily referenceable (presu
 
 ```js
 (function($) { /* jQuery plugin code referencing $ */  } )(jQuery)
+```
+
+## Explain why the following doesn't work as an IIFE: `function foo(){  }();`
+
+This is a function definition, it defines foo. But it’s not a function expression - that is, it’s not understood by the JS parser to actually call a function.
+
+For the parser, things look like this:
+
+```js
+function foo(){
+} // ok, done with that function definition
+  // (silly human left off the semicolon, how embarrassing!)
+
+(); // Are they trying to call something? What’s the function’s name?
+    // PARSE ERROR
+```
+
+In order to prep the parser that we're actually dealing with a function expression we have to wrap things up in () like so:
+
+```js
+( // oh goody, we're going to call some function expressions!
+  function foo(){ // here's the function definition
+  }() // and here's where the function is actually called
+);
 ```
