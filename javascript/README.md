@@ -33,6 +33,16 @@ Cons:
 The difference is that `apply` lets you invoke the function with arguments as an array;
 `call` requires the parameters to be listed explicitly. A useful mnemonic is "A for array and C for comma."
 
+## When would you use `document.write()`?
+Generally `document.write` is considered a bad practice. 
+But it is the simpliest way to include third party content into the document. 
+Also the shortest, and it does not cause any conflicts.
+You may also use `document.write` to:
+* include styles that should only work if JavaScript is enabled.
+* alter all the content of the iframe (this approach have been used to partially update the page before AJAX)
+
+
+
 ## What's the difference between an "attribute" and a "property"?
 ### Attribute
 1. Attributes are defined by HTML, all definitions inside HTML tag are attributes.
@@ -72,7 +82,7 @@ document.getElementById('test').getAttribute('id');
 document.getElementById('test').setAttribute('class', 'red');
 ```
 
-# What is the difference between `==` and `===`?
+## What is the difference between `==` and `===`?
 JavaScript has both strict `===` and type-converting `==` equality comparison.
 For strict equality the objects being compared must have the same type and:
 
