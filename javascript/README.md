@@ -316,10 +316,10 @@ the code will instead print:
 ```js
 Array.prototype.lalka = () => console.log('lalka')
 
-1
-2
-3
-lalka
+// 1
+// 2
+// 3
+// lalka
 ```
 
 With lalka method added to the array prototype by us which can break some other library.
