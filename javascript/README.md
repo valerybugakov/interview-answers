@@ -305,7 +305,7 @@ for (const i in x) {
 ```
 
 It will print
-```
+```js
 // 1
 // 2
 // 3
