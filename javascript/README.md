@@ -298,8 +298,6 @@ Because it can break other things. Extending built-in types, such as Object or A
 
 Consider this code:
 ```js
-Array.prototype.lalka = () => console.log('lalka')
-
 const x = [1, 2, 3]
 for (const i in x) {
   console.log(i)
@@ -307,19 +305,21 @@ for (const i in x) {
 ```
 
 It will print
-`
+```
 // 1
 // 2
 // 3
-`
+```
 
-However if you change the array prototype, like the prolific ExtJS library does,
+However if you change the array prototype, like in example below,
 the code will instead print:
-`
-// 1
-// 2
-// 3
-// lalka
-`
+```js
+Array.prototype.lalka = () => console.log('lalka')
+
+1
+2
+3
+lalka
+```
 
 With lalka method added to the array prototype by us which can break some other library.
