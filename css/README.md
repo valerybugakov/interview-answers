@@ -52,4 +52,44 @@ When no element has a z-index, elements are stacked in this order (from bottom t
 
 If you want to specify a different stacking order, you have to position an element and use the `z-index` property.
 
+## Describe BFC(Block Formatting Context) and how it works.
+A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
 
+A block formatting context is created by one of the following:
+
+* the root element or something that contains it
+* floats (elements where float is not none)
+* absolutely positioned elements (elements where position is absolute or fixed)
+* inline-blocks (elements with display: inline-block)
+* table cells (elements with display: table-cell, which is the default for HTML table cells)
+* table captions (elements with display: table-caption, which is the default for HTML table captions)
+* elements where overflow has a value other than visible
+* flex boxes (elements with display: flex or inline-flex)
+
+A block formatting context contains everything inside of the element creating it that is not also inside a descendant element that creates a new block formatting context.
+
+Block formatting contexts are important for the positioning and clearing of floats. The rules for positioning and clearing of floats apply only to things within the same block formatting context. Floats do not affect the layout of things in other block formatting contexts, and clear only clears past floats in the same block formatting context.
+
+## What are the various clearing techniques and which is appropriate for what context?
+
+### 1. Floating the container 
+If you __float__ an element containing floats, it will encompass its content. The side-effect of this is that we add another floated element to the page, while we most of the times want it to behave as a regular block element. That is solved by applying a `width` of `100%` to the container as well, so it forces a line-break before the content after it.
+ 
+Setting a width to 100% might collide with desired padding.
+ 
+### 2. Adding `overflow: hidden` to the container
+The easiest one. Can be used when you do not need overflow.
+If you add `overflow: hidden` to the containing element, it will automatically adjust its height and take the floated children into account.
+
+### 3. Using pseudo class
+Another alternative is to use the CSS `pseudo-class: after` to generate content after the containing element, using it to clear floats and then hiding itself.
+
+```js
+.container-with-generated-content:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+```
