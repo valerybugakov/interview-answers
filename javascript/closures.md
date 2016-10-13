@@ -9,3 +9,5 @@ Several defenitions:
   assigned to a variable, passed as an argument to a function, or returned as a function result.
 * a closure is a __stack frame__ which is allocated when a function starts its execution, 
   and not freed after the function returns (as if a 'stack frame' were allocated on the heap rather than the stack!).
+  
+Used in module pattern. Can be used for currying.
