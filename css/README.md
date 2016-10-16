@@ -14,7 +14,7 @@ Ids take precedence over classes in CSS.
 
 ## What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 Resetting CSS means getting rid of all styling, and normalizing CSS means making sure the styling is consistent across browsers.
-Normalizing corrects some common bugs that are out of scope for resetetting.
+Normalizing corrects some common bugs that are out of scope for resetting.
 
 There will be soon an `all` shorthand property that resets all properties, apart from `unicode-bidi` and `direction`, to their `initial` or `inherited` value.
 While there is not it is better to use normalization.
@@ -72,11 +72,11 @@ Block formatting contexts are important for the positioning and clearing of floa
 
 ## What are the various clearing techniques and which is appropriate for what context?
 
-### 1. Floating the container 
+### 1. Floating the container
 If you __float__ an element containing floats, it will encompass its content. The side-effect of this is that we add another floated element to the page, while we most of the times want it to behave as a regular block element. That is solved by applying a `width` of `100%` to the container as well, so it forces a line-break before the content after it.
- 
+
 Setting a width to 100% might collide with desired padding.
- 
+
 ### 2. Adding `overflow: hidden` to the container
 The easiest one. Can be used when you do not need overflow.
 If you add `overflow: hidden` to the containing element, it will automatically adjust its height and take the floated children into account.
