@@ -37,15 +37,15 @@ As the Promise.prototype.then() and Promise.prototype.catch() methods return pro
 ```js
 doSomething().then(function () {
     return doSomethingElse()
-});
+}).then(finalHandler);
 
 doSomething().then(function () {
     doSomethingElse()
-});
+}).then(finalHandler);
 
-doSomething().then(doSomethingElse())
+doSomething().then(doSomethingElse()).then(finalHandler)
 
-doSomething().then(doSomethingElse)
+doSomething().then(doSomethingElse).then(finalHandler)
 ```
 
 
