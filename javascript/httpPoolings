@@ -8,11 +8,15 @@ A client requests a webpage from a server.
 The server calculates the response
 The server sends the response to the client.
 
+![alt tag](http://i.stack.imgur.com/TK1ZG.png)
+
 Ajax Polling:
 
 A client requests a webpage from a server using regular HTTP (see HTTP above).
 The requested webpage executes JavaScript which requests a file from the server at regular intervals (e.g. 0.5 seconds).
 The server calculates each response and sends it back, just like normal HTTP traffic.
+
+![alt tag](http://i.stack.imgur.com/qlMEU.png)
 
 Ajax Long-Polling:
 
@@ -21,6 +25,8 @@ The requested webpage executes JavaScript which requests a file from the server.
 The server does not immediately respond with the requested information but waits until there's new information available.
 When there's new information available, the server responds with the new information.
 The client receives the new information and immediately sends another request to the server, re-starting the process.
+
+![alt tag](http://i.stack.imgur.com/zLnOU.png)
 
 HTML5 Server Sent Events (SSE) / EventSource:
 
@@ -32,6 +38,8 @@ You'll want to use a server that has an event loop
 Not possible to connect with a server from another domain
 If you want to read more, I found these very useful: (article), (article), (article), (tutorial).
 
+![alt tag](http://i.stack.imgur.com/ziR5h.png)
+
 HTML5 Websockets:
 
 A client requests a webpage from a server using regular http (see HTTP above).
@@ -42,6 +50,8 @@ You'll want to use a server that has an event loop
 With WebSockets it is possible to connect with a server from another domain.
 It is also possible to use a third party hosted websocket server, for example Pusher or others. This way you'll only have to implement the client side, which is very easy!
 If you want to read more, I found these very useful: (article), (article) (tutorial).
+
+![alt tag](http://i.stack.imgur.com/CgDlc.png)
 
 Comet:
 
