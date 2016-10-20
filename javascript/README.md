@@ -58,6 +58,10 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [What do you know about promises?](promise.md)
 * [Data types in javascript](dataTypes.md)
 * [Anonymous vs. referenced vs. declared functions](functionDeclarations.md)
+* [What are the ways server can push data to the client?](comet.md)
+  * [Describe long polling](longPolling.md)
+  * [What are server-sent events?](serverSentEvents.md)
+
 
 --
 
