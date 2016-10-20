@@ -2,7 +2,7 @@
 
 Before you can understand these technologies, you have to understand classic HTTP web traffic first.
 
-Regular HTTP:
+### Regular HTTP:
 
 A client requests a webpage from a server.
 The server calculates the response
@@ -10,7 +10,7 @@ The server sends the response to the client.
 
 ![alt tag](http://i.stack.imgur.com/TK1ZG.png)
 
-Ajax Polling:
+### Ajax Polling:
 
 A client requests a webpage from a server using regular HTTP (see HTTP above).
 The requested webpage executes JavaScript which requests a file from the server at regular intervals (e.g. 0.5 seconds).
@@ -18,7 +18,7 @@ The server calculates each response and sends it back, just like normal HTTP tra
 
 ![alt tag](http://i.stack.imgur.com/qlMEU.png)
 
-Ajax Long-Polling:
+### Ajax Long-Polling:
 
 A client requests a webpage from a server using regular HTTP (see HTTP above).
 The requested webpage executes JavaScript which requests a file from the server.
@@ -28,7 +28,7 @@ The client receives the new information and immediately sends another request to
 
 ![alt tag](http://i.stack.imgur.com/zLnOU.png)
 
-HTML5 Server Sent Events (SSE) / EventSource:
+### HTML5 Server Sent Events (SSE) / EventSource:
 
 A client requests a webpage from a server using regular HTTP (see HTTP above).
 The requested webpage executes javascript which opens a connection to the server.
@@ -40,7 +40,7 @@ If you want to read more, I found these very useful: (article), (article), (arti
 
 ![alt tag](http://i.stack.imgur.com/ziR5h.png)
 
-HTML5 Websockets:
+### HTML5 Websockets:
 
 A client requests a webpage from a server using regular http (see HTTP above).
 The requested webpage executes JavaScript which opens a connection with the server.
@@ -53,7 +53,7 @@ If you want to read more, I found these very useful: (article), (article) (tutor
 
 ![alt tag](http://i.stack.imgur.com/CgDlc.png)
 
-Comet:
+### Comet:
 
 Comet is a collection of techniques prior to HTML5 which use streaming and long-polling to achieve real time applications. Read more on wikipedia or this article.
 
