@@ -36,7 +36,6 @@ Before you can understand these technologies, you have to understand classic HTT
 - Real-time traffic from server to client, mostly that's what you'll need
 - You'll want to use a server that has an event loop
 - Not possible to connect with a server from another domain
-- If you want to read more, I found these very useful: (article), (article), (article), (tutorial).
 
 ![alt tag](http://i.stack.imgur.com/ziR5h.png)
 

@@ -18,19 +18,19 @@
 * [What's the difference between `.call` and `.apply`?](callVsApply.md)
 * Explain `Function.prototype.bind`.
 * [When would you use `document.write()`?](documentWrite.md)
-* What's the difference between feature detection, feature inference, and using the UA string?
+* [What's the difference between feature detection, feature inference, and using the UA string?](featureDetection.md)
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?
 * [Explain how JSONP works (and how it's not really Ajax).](jsonp.md)
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
 * [Explain "hoisting".](hoisting.md)
-* Describe event bubbling.
+* [Describe event bubbling.](eventFlow.md)
 * [What's the difference between an "attribute" and a "property"?](attributeVsProperty.md)
 * [Why is extending built-in JavaScript objects not a good idea?](extendingBuiltInObjects.md)
 * [Difference between document load event and document DOMContentLoaded event?](documentVsDOMLoadEvent.md)
 * [What is the difference between `==` and `===`?](equalOperator.md)
-* Explain the same-origin policy with regards to JavaScript.
+* [Explain the same-origin policy with regards to JavaScript.](sameOrigin.md)
 * Make this work:
 ```javascript
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
@@ -56,6 +56,7 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 
 * [What do you know about promises?](promise.md)
+* [How do you check if an object is an array or not?](checkArray.md)
 * [Data types in javascript](dataTypes.md)
 * [Anonymous vs. referenced vs. declared functions](functionDeclarations.md)
 * [What are the ways server can push data to the client?](comet.md)
