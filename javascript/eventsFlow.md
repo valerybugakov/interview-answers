@@ -13,3 +13,18 @@ Once the propagation path has been determined, the event object passes through o
 - **The target phase**: The event object arrives at the event object’s event target. This phase is also known as the at-target phase. If the event type indicates that the event doesn’t bubble, then the event object will halt after completion of this phase.
 
 - **The bubble phase**: The event object propagates through the target’s ancestors in reverse order, starting with the target’s parent and ending with the Window. This phase is also known as the bubbling phase.
+
+```js
+element1.addEventListener('click', doSomething2, true) // captruring phase
+element2.addEventListener('click', doSomething, false) // bubbling phase
+```
+
+If the user clicks on element2 the following happens:
+
+1. The click event starts in the capturing phase. The event looks if any ancestor element of element2 has a onclick event handler for the capturing phase.
+
+2. The event finds one on element1. `doSomething2()` is executed.
+
+3. The event travels down to the target itself, no more event handlers for the capturing phase are found. The event moves to its bubbling phase and executes `doSomething()`, which is registered to element2 for the bubbling phase.
+
+4. The event travels upwards again and checks if any ancestor element of the target has an event handler for the bubbling phase. This is not the case, so nothing happens.
