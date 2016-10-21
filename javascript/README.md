@@ -7,7 +7,7 @@
 * [Explain how prototypal inheritance works](prototypes.md) * — Not full *
 * What do you think of AMD vs CommonJS?
 * [Explain why the following doesn't work as an IIFE: `function foo(){ }();`.](iife.md)
-  * What needs to be changed to properly make it an IIFE?
+  * [What needs to be changed to properly make it an IIFE?](iife.md)
 * [What's the difference between a variable that is: `null`, `undefined` or undeclared?](nullVsUndefined.md)
   * How would you go about checking for any of these states?
 * [What is a closure, and how/why would you use one?](closure.md)
@@ -40,9 +40,9 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 * Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 * Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
-* Explain what a single page app is and how to make one SEO-friendly.
+* [Explain what a single page app is and how to make one SEO-friendly.](SPAvsSEO.md)
 * What is the extent of your experience with Promises and/or their polyfills?
-* What are the pros and cons of using Promises instead of callbacks?
+* [What are the pros and cons of using Promises instead of callbacks?](callbacksVsPromises.md)
 * What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 * What tools and techniques do you use debugging JavaScript code?
 * What language constructions do you use for iterating over object properties and array items?
