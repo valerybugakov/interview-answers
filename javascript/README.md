@@ -19,7 +19,7 @@
 * [Explain `Function.prototype.bind`.](bind.md)
 * [When would you use `document.write()`?](documentWrite.md)
 * [What's the difference between feature detection, feature inference, and using the UA string?](featureDetection.md)
-* Explain Ajax in as much detail as possible.
+* [Explain Ajax in as much detail as possible.](ajax.md)
 * What are the advantages and disadvantages of using Ajax?
 * [Explain how JSONP works (and how it's not really Ajax).](jsonp.md)
 * Have you ever used JavaScript templating?
@@ -31,7 +31,7 @@
 * [Difference between document load event and document DOMContentLoaded event?](documentVsDOMLoadEvent.md)
 * [What is the difference between `==` and `===`?](equalOperator.md)
 * [Explain the same-origin policy with regards to JavaScript.](sameOrigin.md)
-* Make this work:
+* [Make this work:](duplicate.md)
 ```javascript
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
