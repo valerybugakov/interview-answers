@@ -16,7 +16,7 @@
 * [What's the difference between host objects and native objects?](hostAndNativeObjects.md)
 * [Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?](newVsFunction.md)
 * [What's the difference between `.call` and `.apply`?](callVsApply.md)
-* Explain `Function.prototype.bind`.
+* [Explain `Function.prototype.bind`.](bind.md)
 * [When would you use `document.write()`?](documentWrite.md)
 * [What's the difference between feature detection, feature inference, and using the UA string?](featureDetection.md)
 * Explain Ajax in as much detail as possible.
