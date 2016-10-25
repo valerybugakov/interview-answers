@@ -61,7 +61,11 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [Anonymous vs. referenced vs. declared functions](functionDeclarations.md)
 * [What are the ways server can push data to the client?](comet.md)
   * [Describe long polling](longPolling.md)
+  * Describe http streaming
   * [What are server-sent events?](serverSentEvents.md)
+* [How would you get currently focused element?](activeElement.md)
+* [As `[]` is true, `[]==true` should also be true. Right?](truthy.md)
+  * [What is `toPrimitive`?](toPrimitive.md)
 
 
 --
