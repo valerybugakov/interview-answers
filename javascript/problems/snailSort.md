@@ -72,3 +72,31 @@ snail = function(array) {
   return result;
 }
 ```
+
+## Recursive (not super nice)
+```js
+function snail(array, level = 0, res = []) {
+  const length = array[0].length
+  const rightIndex = length - 1 - level
+  
+  if (res.length === length ** 2) {
+     return res
+  }
+  
+  if (level === rightIndex) {
+    res.push(array[level][level])
+    return res
+  }
+  
+  for (let i = 0; i < 4; i++) {    
+    for (let j = level; j < rightIndex; j++) {
+      if (i === 0) res.push(array[level][j])
+      if (i === 1) res.push(array[j][rightIndex])
+      if (i === 2) res.push(array[rightIndex][length - 1 - j])
+      if (i === 3) res.push(array[length - 1 - j][level])
+    }
+  }
+  
+  return snail(array, level + 1, res)
+}
+```
