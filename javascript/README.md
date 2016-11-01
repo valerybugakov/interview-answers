@@ -69,6 +69,8 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [What is late binding?](lateBinding.md)
 * [What does `void` do?](void.md)
 * [What are WebComponents?](webComponents.md)
+* [Why Babel use (0,obj.prop)()?](references.md)
+
 
 
 --
