@@ -66,3 +66,90 @@ You use the `<style>` element to add CSS to shadow DOM. Using the same example, 
   shadow.innerHTML += '<style>p { color: red; }</style>';
 </script>
 ```
+
+### HTML file
+
+```html
+If nothing appeared below, then your browser is not supporting Custom Elements.
+<x-product data-name="Ruby" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/ruby.png" data-url="http://example.com/1"></x-product>
+<x-product data-name="JavaScript" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png" data-url="http://example.com/2"></x-product>
+<x-product data-name="Python" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/python.png" data-url="http://example.com/3"></x-product>
+```
+
+### JS file
+
+```js
+// Create a class for the element
+class XProduct extends HTMLElement {
+  constructor() {
+    // Always call super first in ctor
+    super();
+
+    // Create a shadow root
+    var shadow = this.attachShadow({mode: 'open'});
+
+    // Create a standard img element and set it's attributes.
+    var img = document.createElement('img');
+    img.alt = this.getAttribute('data-name');
+    img.src = this.getAttribute('data-img');
+    img.width = '150';
+    img.height = '150';
+    img.className = 'product-img';
+
+    // Add the image to the shadow root.
+    shadow.appendChild(img);
+
+    // Add an event listener to the image.
+    img.addEventListener('click', () => {
+      window.location = this.getAttribute('data-url');
+    });
+
+    // Create a link to the product.
+    var link = document.createElement('a');
+    link.innerText = this.getAttribute('data-name');
+    link.href = this.getAttribute('data-url');
+    link.className = 'product-name';
+
+    // Add the link to the shadow root.
+    shadow.appendChild(link);
+  }
+}
+
+// Define the new element
+customElements.define('x-product', XProduct);
+```
+
+### CSS file:
+
+```css
+body {
+  background: #F7F7F7;
+}
+
+x-product {
+  display: inline-block;
+  float: left;
+  margin: 0.5em;
+  border-radius: 3px;
+  background: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  font-family: Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+x-product::slotted(.product-img) {
+  cursor: pointer;
+  background: #FFF;
+  margin: 0.5em;
+}
+
+x-product::slotted(.product-name) {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #08C;
+  border-top: 1px solid #EEE;
+  font-weight: bold;
+  padding: 0.75em 0;
+}
+```
