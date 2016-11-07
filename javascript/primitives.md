@@ -8,6 +8,8 @@ All primitives are **immutable** (cannot be changed).
 
 A primitive type has a fixed size in memory. For example, a number occupies eight bytes of memory, and a boolean value can be represented with only one bit. The number type is the largest of the primitive types. If each JavaScript variable reserves eight bytes of memory, the variable can directly hold any primitive value.
 
+Strings may have different length so that cannot be stored directly in a variable. And they looks like just an *array* of *characters* because they have methods like `length()`, `concat()` and `indexOf()`. But it's a primitive in Javascript. Implementation of strings lays somewhere in between primitives and objects. The difference with objects is that strings are **immutalbe** like all other primitive data types.
+
 Reference types are another matter, however. Objects, for example, can be of any length -- they do not have a fixed size. Since these types do not have a fixed size, their values cannot be stored directly in the eight bytes of memory associated with each variable. Instead, the variable stores a reference to the value. Typically, this reference is some form of pointer or memory address. It is not the data value itself, but it tells the variable where to look to find the value.
 
 The distinction between primitive and reference types is an important one, as they behave differently. Consider the following code that uses numbers (a primitive type):
