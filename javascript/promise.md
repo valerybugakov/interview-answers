@@ -8,8 +8,7 @@ const p = new Promise((resolve, reject) => {
   // Do an async task async task and then...
   if(/* good condition */) {
     resolve('Success!')
-  }
-  else {
+  } else {
     reject('Failure!')
   }
 })
@@ -27,21 +26,23 @@ A Promise is a proxy for a value not necessarily known when the promise is creat
 
 A Promise is in one of these states:
 
-pending: initial state, not fulfilled or rejected.
-fulfilled: meaning that the operation completed successfully.
-rejected: meaning that the operation failed.
-A pending promise can either be fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)
+- `pending`: initial state, not fulfilled or rejected.
+- `fulfilled`: meaning that the operation completed successfully.
+- `rejected`: meaning that the operation failed.
 
-As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained.
+A `pending` promise can either be `fulfilled` with a value, or `rejected` with a reason (error). When either of these happens, the associated handlers queued up by a promise's `then` method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)
+
+As the `Promise.prototype.then()` and `Promise.prototype.catch()` methods return promises, they can be chained.
+`Promise.prototype.catch()` behaves the same as calling `Promise.prototype.then(undefined, onRejected)`.
 
 ```js
 doSomething().then(function () {
     return doSomethingElse()
-}).then(finalHandler);
+}).then(finalHandler)
 
 doSomething().then(function () {
     doSomethingElse()
-}).then(finalHandler);
+}).then(finalHandler)
 
 doSomething().then(doSomethingElse()).then(finalHandler)
 
@@ -89,4 +90,29 @@ doSomething
                   |------------------|
                                      finalHandler(resultOfDoSomethingElse)
                                      |------------------|
+```
+
+### Error catching gotchas
+
+```js
+// Errors thrown inside asynchronous functions will act like uncaught errors
+var p2 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    throw 'Uncaught Exception!'
+  }, 1000)
+})
+
+p2.catch(function(e) {
+  console.log(e) // This is never called
+})
+
+// Errors thrown after resolve is called will be silenced
+var p3 = new Promise(function(resolve, reject) {
+  resolve()
+  throw 'Silenced Exception!'
+})
+
+p3.catch(function(e) {
+   console.log(e) // This is never called
+})
 ```
