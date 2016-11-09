@@ -71,6 +71,7 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [What are WebComponents?](webComponents.md)
 * [Why Babel use (0,obj.prop)()?](references.md)
 * [What is primitive data type?](primitives.md)
+* [Are loops faster in reverse?](reverseLoops.md)
 
 
 --
