@@ -73,6 +73,7 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [What is primitive data type?](primitives.md)
 * [Are loops faster in reverse?](reverseLoops.md)
 * [How `WeakMap` can help you prevent memory leaks?](proxyLeak.md)
+* [What is the pros and cons of using `Proxy` vs Getters and Setters?](proxyVsGetters.md)
 
 
 --
