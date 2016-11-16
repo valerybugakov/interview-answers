@@ -16,6 +16,19 @@ Libraries using the ES5 method provide 'computed' bound properties by some speci
 
 Proxies intercept every kind of property access and mutation, including getters and setters, so this does not pose a problem for the ES6 method.
 
-### The disadvantage
+### Browser support
 
 The big disadvantage of using Proxies is browser support. They are only supported in the most recent browsers and the best parts of the Proxy API are non polyfillable. Also their performance is not optimized yet.
+
+### Proxy wrapper
+
+ES6 Proxies can only create a separate "copy" of the original object, but this copy will fail in cases where you try to compare them with `===:`
+
+```js
+var obj = { a: 1 }
+var proxy = new Proxy(obj, handlers)
+
+obj === proxy // false
+```
+
+This introduces more complexity when you are accessing nested properties - you will always need to be careful about whether a value you retrieved is the "real one" or just a proxy, otherwise it can lead to obscure bugs when you rely on `===` comparators.
