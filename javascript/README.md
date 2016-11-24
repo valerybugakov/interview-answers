@@ -54,6 +54,7 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * [What is event loop?](eventLoop.md)
   * [What is the difference between call stack and task queue?](eventLoop.md)
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+
 --
 * [What do you know about promises?](promise.md)
 * [How do you check if an object is an array or not?](checkArray.md)
