@@ -28,3 +28,7 @@ If the user clicks on element2 the following happens:
 3. The event travels down to the target itself, no more event handlers for the capturing phase are found. The event moves to its bubbling phase and executes `doSomething()`, which is registered to element2 for the bubbling phase.
 
 4. The event travels upwards again and checks if any ancestor element of the target has an event handler for the bubbling phase. This is not the case, so nothing happens.
+
+### Stop Immediate Propagation
+
+If several listeners are attached to the same element for the same event type, they are called in order in which they have been added. If during one such call, `event.stopImmediatePropagation()` is called, no remaining listeners will be called.
