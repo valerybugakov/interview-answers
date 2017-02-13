@@ -62,3 +62,37 @@ p.y = 20
 p.print() // 10 20
 ```
 The lookup time for properties that are high up on the prototype chain can have a negative impact on performance, and this may be significant in code where performance is critical. Additionally, trying to access nonexistent properties will always traverse the full prototype chain.
+
+
+Another example:
+```js
+function Parent(name) {
+  this.name = name
+}
+
+Parent.prototype = {
+  sayLol() {
+    console.log(this.name + ' lol')
+  }
+}
+
+p = new Parent('bob')
+p.sayLol()
+console.log('------ after Parent ------')
+
+function Child(lastname) {
+  Parent.call(this, lastname)
+  this.lastname = lastname
+}
+
+Child.prototype = Object.create(Parent.prototype)
+Child.prototype.constructor = Child
+
+Child.prototype.sayOmg = function() {
+  console.log(this.lastname + ' omg')
+}
+
+c = new Child('dilan')
+c.sayLol()
+c.sayOmg()
+```
