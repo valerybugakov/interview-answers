@@ -5,7 +5,7 @@ The following sections explain a theoretical model. Modern JavaScript engines im
 
 #### Stack
 
-Function calls from a stack of frames.
+Function calls form a stack of frames.
 
 ```js
 function f(b){
