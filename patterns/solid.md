@@ -118,7 +118,7 @@ The lesson here is whenever you expose a module for outside use, make sure only 
 
 Otherwise, your friends will hate you.
 
-5. Dependency Inversion Principle
+### 5. Dependency Inversion Principle
 
 You’ve might have heard about dependency inversion before only as a different term. Dependency Injection and Inversion of Controls also mean the same thing. This is the most famous principle out of the bunch.
 
